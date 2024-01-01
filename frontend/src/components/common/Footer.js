@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className='Footer'>
         <div className='info'>
-              <h1>Sports Pro</h1>
+              <h1><FcSportsMode></FcSportsMode>Sports Pro</h1>
               <h4>We manage the all sport activites from here for university students</h4>
         </div>
         <div className='social'>
