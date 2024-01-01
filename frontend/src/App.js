@@ -1,18 +1,23 @@
-import { AdminLayout } from "./Layout/AdminLayout";
-import { UserLayout } from "./Layout/UserLayout";
+// App.js
+import React, { useState } from 'react';
+import UserLayout from './Layout/UserLayout';  // Corrected import
+import AdminLayout from './Layout/AdminLayout';  // Corrected import
+import LoginForm from './Login/LoginForm';
 
-const role = 'user'
-function App() {
-  {
-    if (role == 'user')
-    return(
-      <UserLayout/>
-    )
-    else if (role == 'admin')
-    return(
-      <AdminLayout/>
-    )
-  }
-}
+const App = () => {
+  const [userRole, setUserRole] = useState('');
 
-export default App;
+  const handleLogin = (role) => {
+    setUserRole(role);
+  };
+
+  return (
+    <div>
+      {userRole === 'guest' && <UserLayout />}
+      {userRole === 'admin' && <AdminLayout />}
+      {userRole === '' && <LoginForm onLogin={handleLogin} />}  {/* Corrected component name */}
+    </div>
+  );
+};
+
+export default App;
