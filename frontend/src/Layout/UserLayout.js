@@ -1,11 +1,11 @@
 import React from 'react'
+import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
 const UserLayout=()=>{
   return(
     <div>
-    <h1>Header</h1>
-    <h1>slide</h1>
-    <h1>Score</h1>
-    <h1>Footer</h1>
+    <Header></Header>
+    <Footer></Footer>
     </div>
   )
 }

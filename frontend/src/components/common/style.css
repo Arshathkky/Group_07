@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: roboto;
+    
+}
+
+.Nav {
+    width: auto;
+    height: 80px;
+    display: flex;
+    background-color: rgba(18, 17, 17, 0.748);
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+     /* Adjust padding for better spacing on smaller screens */
+  }
+  
+  .Nav h1 {
+    background-color: rgba(60, 199, 250, 0.914);
+  color: white;
+  font-size: 24px; /* Adjust font size for smaller screens */
+  font-weight: 300;
+  padding: 5px 10px; /* Adjust padding for better spacing on smaller screens */
+  margin: 0; /* Remove margin to stay in the same line */
+  height: 100%; /* Set height to 100% */
+  line-height: 80px;/* Remove margin to stay in the same line */
+  }
+  
+  .Nav .nav-list {
+    padding: 5px;
+    font-size: 18px; /* Adjust font size for smaller screens */
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+  }
+  
+  .Nav .nav-list li {
+    margin: 0 10px; /* Adjust margin for better spacing on smaller screens */
+    list-style: none; /* Remove list decoration */
+  }
+  
+  .Nav .nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .Nav .nav-list li a:hover {
+    background-color: rgba(60, 199, 250, 0.914);
+    border-radius: 5px;
+  }
+  
+  .Nav .login button {
+    background-color: rgba(60, 199, 250, 0.914);
+    color: white;
+    border: none;
+    margin: 10px; /* Adjust margin for better spacing on smaller screens */
+  }
+  
+
+
+.Footer {
+    background-color: rgba(18, 17, 17, 0.748);
+    width: auto;
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly across the container */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  .Footer .info,
+  .Footer .social,
+  .Footer .contactus {
+    width: 30%; /* Set the width of each column for larger screens */
+    margin-bottom: 20px; /* Add some spacing between columns */
+  }
+  
+  .Footer .info h4 {
+    font-size: 15px;
+  }
+  
+  .Footer .li {
+    list-style: none;
+    font-size: 15px;
+    text-align: left;
+  }
+  
+  .Footer .link a,
+  .Footer .contactus li {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .Footer .link .icon {
+    margin: 15px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .Nav .logo{
+        
+        padding: 0;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .Nav {
+        height: auto; /* Adjust height for mobile view */
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .Nav h1 {
+        display: none;
+      }
+    
+      .Nav .nav-list {
+        flex-direction: column; /* Change to column for mobile view */
+        justify-content: center;
+        width: 100%;
+        padding-top: 10px; /* Add padding for better spacing on smaller screens */
+      }
+    
+      .Nav .nav-list li {
+        margin: 5px 0; /* Adjust margin for better spacing on smaller screens */
+      }
+    
+      .Nav .login button {
+        margin: 10px; /* Adjust margin for better spacing on smaller screens */
+      }
+
+
+   .Footer .info,
+  .Footer .social,
+  .Footer .contactus {
+    width: 100%; /* Take up the full width on smaller screens */
+  }
+  
+}
