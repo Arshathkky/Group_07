@@ -17,6 +17,8 @@ npm install -g nodemon
 
 for slider images
 npm install react-slideshow-image
+npm install react-router-dom 
+npm install react react-icons
 
 
 for front end we are using react so if you want to run the code  first clone this file run npm start
