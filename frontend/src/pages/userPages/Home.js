@@ -1,11 +1,14 @@
 import React from 'react'
 
+import Sliderbar from  '../../components/homeComponent.js/Sliderbar'
+
 const Home = () => {
   return (
     <div>
-      Home
+        <Sliderbar/>
     </div>
   )
 }
 
 export default Home
+
