@@ -1,0 +1,82 @@
+.container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 0;
+    max-width: 100%;
+    text-align: center;
+    color:rgba(60, 199, 250, 0.914) ;
+  }
+  .schedulepart{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    background: linear-gradient(to bottom, rgba(82, 82, 82, 0.23),rgba(0, 0, 0, 0.8));
+  }
+  
+  .schedulepart .upcoming{
+    flex: 1;
+    
+    
+  }
+  .schedulepart .upcoming .team h3{
+    font-weight: 300;
+    color: white;
+  }
+  .schedulepart .upcoming .team{
+    background-color: rgba(255,255,255,.17);
+    padding: 75px 0;
+    margin: 75px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: inset;
+  }
+  
+  .schedulepart .upcoming .team img{
+    width: 200px;
+    height: 150px;
+    padding: 35px;
+    margin: auto;
+    padding-top: 0;
+  }
+  .schedulepart .upcoming .team ul{
+    display: flex;
+    flex-direction: row;
+  }
+  .schedulepart .upcoming .team ul li{
+    list-style: none;
+    padding: 10px;
+    font-size: 25px;
+    color: white;
+    font-weight:300;
+  }
+  .schedulepart .schedule{
+    flex: 1;
+  }
+  .schedulepart .schedule table{
+    background-color: rgba(255,255,255,.17);
+    padding: 75px 0;
+    margin: 75px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: inset;
+    color: white;
+  }
+  .schedulepart .schedule table tr:nth-child(odd) {
+    background: #002147;
+  }
+  
+  .schedulepart .schedule tr:nth-child(even) {
+    background: rgba(255,255,255,.17);
+  }
+  .schedulepart .schedule table tr td{
+    padding: 30px;
+  }
