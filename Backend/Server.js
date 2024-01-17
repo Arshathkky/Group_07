@@ -1,35 +1,29 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import cookieParser from 'cookie-parser';
-
-dotenv.config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 8080;
+const port = 5000;
+<<<<<<< HEAD
+const eventRouter = require('./Routes/EventRoutes')
+=======
+
+mongoose.connect('mongodb+srv://arshathhaseen:1234@cluster0.4ahayis.mongodb.net/SportManagementSystem');
+>>>>>>> 32e0bde5bd9c2ea3dd807fbe58c1af4a389ed9cf
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 
+<<<<<<< HEAD
 // MongoDB connection
-const connectDB = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO_URL, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log("Connected to MongoDB");
-    } catch (error) {
-        console.error(error.message);
-    }
-}
+mongoose.connect('mongodb+srv://arshathhaseen:1234@cluster0.4ahayis.mongodb.net/SportManagementSystem');
+app.use('/api/event',eventRouter)
 
-// ... Other routes and configurations ...
+
+=======
+>>>>>>> 32e0bde5bd9c2ea3dd807fbe58c1af4a389ed9cf
+
 
 app.listen(port, () => {
-    connectDB();
     console.log(`App running on ${port}`);
 });
