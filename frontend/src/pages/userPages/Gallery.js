@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import ImageUploads from "./ImageUpload"
 import axios from "axios";
-const Grid = () => {
+const Gallery= () => {
   const [photos, setPhotos] = useState([]);
   const [updateUI, setUpdateUI] = useState("");
 
@@ -22,7 +22,7 @@ const Grid = () => {
       <h1>Our Gallery</h1>
       <div className="grid">
         {photos.map(({ photo, _id }) => (
-          <div key={id} className="grid_item">
+          <div key={_id} className="grid_item">
             <img
               src={`http://localhost:5000/uploads/${photo}`}
               alt="grid_image"
@@ -34,4 +34,4 @@ const Grid = () => {
   );
 };
 
-export default Gallary;
+export default Gallery;
