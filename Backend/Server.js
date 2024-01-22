@@ -7,6 +7,7 @@ const eventRouter = require('./Routes/EventRoutes')
 const NewsRoute = require('./Routes/NewsRoutes')
 const scheduleRouter = require('./Routes/ScheduleRoutes');
 const UploadRoute = require("./Routes/GallaryRoutes");
+const RoleRoute = require('./Routes/RoleRoutes')
 mongoose.connect('mongodb+srv://arshathhaseen:1234@cluster0.4ahayis.mongodb.net/SportManagementSystem');
 
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/api/event',eventRouter)
 app.use('/api/news',NewsRoute)
 app.use('/schedules', scheduleRouter);
+app.use('/api/role',RoleRoute)
 app.use(UploadRoute);
 
 app.listen(port, () => {
