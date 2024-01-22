@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AiFillPlusCircle } from "react-icons/ai";
 import axios from "axios";
 
-const ImageUload = () => {
+const AddGallery = () => {
   const [photos, setPhotos] = useState([]);
   const [updateUI, setUpdateUI] = useState("");
 
@@ -50,7 +50,7 @@ const ImageUload = () => {
       <h1>Our Gallery</h1>
       <div className="grid">
         {photos.map(({ photo, _id }) => (
-          <div key={id} className="grid_item">
+          <div key={_id} className="grid_item">
             <img src={`http://localhost:5000/uploads/${photo}`} alt="grid_image" />
             
           </div>
@@ -71,4 +71,4 @@ const ImageUload = () => {
   );
 };
 
-export default AddGallary;
+export default AddGallery;
