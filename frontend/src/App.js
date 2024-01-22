@@ -1,23 +1,22 @@
-// App.js
 import React, { useState } from 'react';
-import UserLayout from './Layout/UserLayout';  // Corrected import
-import AdminLayout from './Layout/AdminLayout';  // Corrected import
-import LoginForm from './Login/LoginForm';
+import UserLayout from './Layout/UserLayout';  
+import AdminLayout from './Layout/AdminLayout';  
+import UserContext from './UserContext';
+import CoachLayout from './Layout/CoachLayout';
 
 const App = () => {
-  const [userRole, setUserRole] = useState('');
-
-  const handleLogin = (role) => {
-    setUserRole(role);
-  };
-
+  const [userRole, setUserRole] = useState('guest');
+  
   return (
     <div>
-      {userRole === 'guest' && <UserLayout />}
-      {userRole === 'admin' && <AdminLayout />}
-      {userRole === '' && <LoginForm onLogin={handleLogin} />}  {/* Corrected component name */}
+      <UserContext.Provider value={[userRole,setUserRole]}>
+        {userRole === 'guest' && <UserLayout />}
+        {userRole === 'admin' && <AdminLayout />}
+        {userRole === 'coach' && <CoachLayout />}
+      </UserContext.Provider>
+        
     </div>
   );
 };
 
-export default App;
+export default App;

@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import ImageUploads from "./ImageUpload"
+//import ImageUploads from "./ImageUpload"
 import axios from "axios";
 const Gallery= () => {
   const [photos, setPhotos] = useState([]);

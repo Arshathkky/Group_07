@@ -1,13 +1,21 @@
 import React from 'react'
-import AddEvents from '../pages/adminPages/AddEvents'
-import AddNews from '../pages/adminPages/AddNews';
-import AddGallary from '../pages/adminPages/AddGallary';
+
+import Header from '../components/common/Header';
+import { useContext } from 'react';
+import UserContext from '../UserContext';
+import AdminRoutes from '../Routes/AdminRoutes';
+import { Link } from 'react-router-dom';
+
+
 const AdminLayout=()=>{
+    const value = useContext(UserContext)
+    const [role] = value
   return (
-    <div>
-      <AddEvents></AddEvents>
-      <AddNews></AddNews>
-      <AddGallary></AddGallary>
+    <div >
+      <Header setRole={role}></Header>
+      <div className='adminContainer'>
+         <AdminRoutes />
+      </div>
     </div>
   )
 }
