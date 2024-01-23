@@ -21,7 +21,7 @@ body {
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
   }
   
-  .grid_item img {
+  .grid__item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -115,6 +115,48 @@ body {
   .newsImage img{
     height: 200px;
     width: 200px;
+  }
+   
+.resultarea{
+    text-align: center;
+    margin: 35px;
+    padding: 25px;
+  }
+  .resultarea .heading{
+    color:rgba(60, 199, 250, 0.914) ;
+    
+  }
+  
+  
+  .resultarea .team h5{
+    color: rgba(60, 199, 250, 0.914) ;;
+    float: left;
+    margin: 10px;
+    font-size: 15px;
+    
+  }
+  .resultarea .team{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;align-items: center;
+    height: auto;
+    width: auto;
+    color: rgba(60, 199, 250, 0.914);  
+  }
+  .resultarea .result{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    color: rgba(60, 199, 250, 0.914);
+    
+    
+  }
+  .resultarea .team img{
+    width: 250px;
+    height: 250px;
+    padding: 35px;
+    padding-top: 0;
+  
   }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
