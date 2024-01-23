@@ -28,5 +28,6 @@ login as coach
 username coach
 password 12345
 
+check participant details on Branch Arshath
 for front end we are using react so if you want to run the code  first clone this file run npm start
 if the error show scrip file is missing something like that type "npm install react-scripts --save"
