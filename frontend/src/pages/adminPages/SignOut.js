@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const SignOut = () => {
     const navigate = useNavigate()
     const values = useContext(UserContext)
-    const [setUser] = values
+    const [,setUser] = values
     
     const logOut = ()=>{
         setUser('guest')
