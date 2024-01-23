@@ -8,6 +8,7 @@ const NewsRoute = require('./Routes/NewsRoutes')
 const scheduleRouter = require('./Routes/ScheduleRoutes');
 const UploadRoute = require("./Routes/GallaryRoutes");
 const RoleRoute = require('./Routes/RoleRoutes')
+const sportRouter = require("./Routes/ScoreRoutes")
 mongoose.connect('mongodb+srv://arshathhaseen:1234@cluster0.4ahayis.mongodb.net/SportManagementSystem');
 
 
@@ -20,7 +21,7 @@ app.use('/api/news',NewsRoute)
 app.use('/schedules', scheduleRouter);
 app.use('/api/role',RoleRoute)
 app.use(UploadRoute);
-
+app.use('/api', sportRouter);
 app.listen(port, () => {
     console.log(`App running on ${port}`);
 });
