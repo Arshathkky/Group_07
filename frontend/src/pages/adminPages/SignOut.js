@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Gallary = () => {
+const SignOut = () => {
   return (
     <div>
-      Gallary
+        signOut
     </div>
   )
 }
 
-export default Gallary
+export default SignOut

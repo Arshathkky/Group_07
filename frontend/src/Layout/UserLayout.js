@@ -1,12 +1,16 @@
 import React from 'react'
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
-import Home from '../pages/userPages/Home';
+import UserRoutes from '../Routes/UserRoutes';
+import { useContext } from 'react';
+import UserContext from '../UserContext';
 const UserLayout=()=>{
+    const value = useContext(UserContext)
+    const [role] = value
   return(
     <div>
-    <Header></Header>
-    <Home/>
+    <Header setRole={role}></Header>
+    <UserRoutes/>
     <Footer></Footer>
     </div>
   )
