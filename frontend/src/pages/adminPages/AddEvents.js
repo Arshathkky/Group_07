@@ -18,7 +18,7 @@ const AddEvents = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/events'); // Update with your backend server URL
+      const response = await axios.get('http://localhost:5000/api/event/getEvent'); // Update with your backend server URL
       setEvents(response.data);
       
 
@@ -29,7 +29,7 @@ const AddEvents = () => {
 
   const handleAddEvent = async () => {
     try {
-      await axios.post('http://localhost:5000/events', { title,sportName, date, teamA, teamB }); // Update with your backend server URL
+      await axios.post('http://localhost:5000/api/event/addEvent', { title,sportName, date, teamA, teamB }); // Update with your backend server URL
       alert('Event added successfully');
       clearForm();
       fetchEvents(); // Fetch updated list of events
@@ -41,8 +41,9 @@ const AddEvents = () => {
 
   const handleUpdateEvent = async (eventId) => {
     try {
-      await axios.put(`http://localhost:5000/events/${eventId}`, { title, date, teamA, teamB }); // Update with your backend server URL
+      await axios.put(`http://localhost:5000/api/event/updateEvent/${eventId}`, { title, date, teamA, teamB }); // Update with your backend server URL
       alert('Event updated successfully');
+      
       clearForm();
       fetchEvents(); // Fetch updated list of events
     } catch (error) {
@@ -53,7 +54,7 @@ const AddEvents = () => {
 
   const handleDeleteEvent = async (eventId) => {
     try {
-      await axios.delete(`http://localhost:5000/events/${eventId}`); // Update with your backend server URL
+      await axios.delete(`http://localhost:5000/api/event/deleteEvent/${eventId}`); // Update with your backend server URL
       alert('Event deleted successfully');
       fetchEvents(); // Fetch updated list of events
     } catch (error) {
@@ -71,22 +72,31 @@ const AddEvents = () => {
   };
 
   return (
-    <div>
+    <div className='adminBox'>
       <h1>Add Event</h1>
-      <form>
-        <label>Title:</label>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
-        <label>Sport Name:</label>
-        <input type="text" value={sportName} onChange={(e) => setSport(e.target.value)} required />
-        <label>Date:</label>
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-        <label>Team A:</label>
-        <input type="text" value={teamA} onChange={(e) => setTeamA(e.target.value)} required />
-        <label>Team B:</label>
-        <input type="text" value={teamB} onChange={(e) => setTeamB(e.target.value)} required />
-        <button type="button" onClick={handleAddEvent}>
-          Add Event
-        </button>
+      <form className='adminForm'>
+      <table>
+  <tr>
+    <td className='label'>Title:</td>
+    <td><input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required /></td>
+  </tr>
+  <tr>
+    <td className='label'>Sport Name:</td>
+    <td><input type="text" value={sportName} onChange={(e) => setSport(e.target.value)} required /></td>
+  </tr>
+  <tr>
+    <td className='label'>Date:</td>
+    <td><input type="date" value={date} onChange={(e) => setDate(e.target.value)} required /></td>
+  </tr>
+  <tr>
+    <td className='label'>Team A</td>
+    <td><input type="text" value={teamA} onChange={(e) => setTeamA(e.target.value)} required /></td>
+  </tr>
+  <tr>
+    <td className='label'>Team B:</td>
+    <td><input type="text" value={teamB} onChange={(e) => setTeamB(e.target.value)} required /></td>
+  </tr>
+</table>
 
         <h2>Events List</h2>
         <ul>

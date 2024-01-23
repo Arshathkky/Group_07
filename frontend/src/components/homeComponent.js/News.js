@@ -34,20 +34,20 @@ const News = () => {
       <h2>Display news</h2>
       <label><input type='checkbox' value="sport" onChange={handleChange} checked={allchecked.includes('sport')} />sport</label>
       <label><input type='checkbox' value="event" onChange={handleChange} checked={allchecked.includes('event')} />Event</label>
-      <label><input type='checkbox' value="common" onChange={handleChange} checked={allchecked.includes('commom')} />Common</label>
+      <label><input type='checkbox' value="common" onChange={handleChange} checked={allchecked.includes('common')} />Common</label>
       
       <div className='news-container'>
-      <ul className='news-list'>
-        {filteredNews.map((data)=>(
-          
-            <li key={data.id}>
-              <h3>{data.catagary}</h3><br/>
-              <h3>{data.title}</h3><br/>
-              <p>{data.body}</p><br/>
-                
+      <ul >
+          {filteredNews.map((data) => (
+            <li key={data._id}>
+              <h2>{data.title}</h2>
+              <div className='newsImage'>
+                    <img src={`http://localhost:5000/uploads/${data.photo}`} alt="grid_image"/><br/>
+              </div>
+              <p>{data.body}</p>
             </li>
-        ))}
-      </ul>
+          ))}
+        </ul>
       </div>
     </div>
   )

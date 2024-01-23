@@ -57,7 +57,7 @@ const AddGallery = () => {
         ))}
       </div>
 
-      <label htmlFor="file_picker" className="button">
+      <label htmlFor="file_picker" className="galleryButton">
         <AiFillPlusCircle />
         <input
           hidden

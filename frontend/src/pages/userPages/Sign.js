@@ -1,18 +1,14 @@
-
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import UserContext from '../../UserContext';
-import { Link,  } from 'react-router-dom';
-
-
 const Sign = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const values = useContext(UserContext)
-    const [user,setUser] = values
+    const [,setUser] = values
     const navigate = useNavigate();
     
       const handleLogin = async () => {
@@ -29,21 +25,19 @@ const Sign = () => {
           console.log(error);
         }
       };
-
   return (
-    <div>
-    <h1>Welcome to the Login Page</h1>       
-      
-      <div>
-    <label>Username: </label>
-    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-    <br />
-    <label>Password: </label>
-    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
-    <br />
-    <button onClick={handleLogin}>Login</button>
-      </div>
-  </div>
+    <div className='adminBox login'>
+      <div className='loginBox'>
+        <h1>Welcome to the Login Page</h1>       
+        <label className='label'>Username: </label>
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <br />
+        <label className='label'>Password: </label>
+        <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <br />
+        <button onClick={handleLogin}>Login</button>
+     </div>
+    </div>
   );
 };
 
