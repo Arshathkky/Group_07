@@ -6,6 +6,7 @@ const AddNews = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [catagary, setCatagary] = useState('');
+  const [photo,setPhotos] = useState('')
   const [news, setNews] = useState([]);
   const [update, setUpdate] = useState(false);
   const [currentNewsId, setCurrentNewsId] = useState(null);
@@ -31,15 +32,21 @@ const AddNews = () => {
     try {
       const response = await axios.get('http://localhost:5000/api/news/getNews');
       setNews(response.data);
+      setPhotos(response.data.photo)
     } catch (error) {
       console.error('Error fetching events: ', error);
     }
   };
 
 
-  const handleAddNews = async () => {
+  const handleAddNews = async (e) => {
     try {
-      await axios.post('http://localhost:5000/api/news/addNews', { title, body, catagary });
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('body', body);
+        formData.append('catagary', catagary);
+        formData.append('photo', photo);
+      await axios.post('http://localhost:5000/api/news/addNews', formData);
       alert('News added Successfully');
       clearForm();
       fetchNews();
@@ -51,6 +58,7 @@ const AddNews = () => {
 
   const handleUpdateNews = async () => {
     try {
+
       await axios.put(`http://localhost:5000/api/news/updateNews/${currentNewsId}`, { title, body, catagary });
       alert('News updated successfully');
       clearForm();
@@ -81,33 +89,50 @@ const AddNews = () => {
   };
 
   return (
-    <div>
+    <div style={{background:'linear-gradient(to right, #ff8c00, #ff2d00)'}}>
+        <div className='adminBox '>
       <h1>{update ? 'Update News' : 'Add News'}</h1>
-      <form>
-        <label>Category: </label>
-        <input type="text" value={catagary} onChange={(e) => setCatagary(e.target.value)} required />
-        <br />
-        <label>Title: </label>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
-        <br />
-        <label>Body: </label>
-        <input type="text" value={body} onChange={(e) => setBody(e.target.value)} required />
-        <br />
+      <form className='adminForm'>
+      <table>
+        <tr>
+            <td className='label'>Category:</td>
+            <td><input type="text" value={catagary} onChange={(e) => setCatagary(e.target.value)} required /></td>
+        </tr>
+        <tr>
+            <td className='label'>Title:</td>
+            <td><input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required /></td>
+        </tr>
+        <tr>
+            <td className='label'>Body:</td>
+            <td><input type="text" value={body} onChange={(e) => setBody(e.target.value)} required /></td>
+        </tr>
+        <tr>
+            <td className='label'>Image:</td>
+            <td><input type='file' onChange={(e) => setPhotos(e.target.files[0])}/></td>
+        </tr>
+        </table>
+
         <button type="button" onClick={update ? handleUpdateNews : handleAddNews}>
-          {update ? 'Update News' : 'Add News'}
+        {update ? 'Update News' : 'Add News'}
         </button>
+
       </form>
+      </div>
       <h2>Display news</h2>
-      <div className="news-container">
-        <ul className="news-list">
+      <div className='news-container'>
+        <ul >
           {news.map((data) => (
-            <li key={data.id}>
+            <li key={data._id}>
               <h3>{data.title}</h3>
               <br />
               <h3>{data.catagary}</h3>
               <br />
               <p>{data.body}</p>
               <br />
+              <div className='newsImage'>
+                    <img src={`http://localhost:5000/uploads/${data.photo}`} alt="grid_image" /><br/>
+              </div>
+
               <button type="button" onClick={() => {
                 setUpdate(true);
                 setCurrentNewsId(data._id);

@@ -13,7 +13,7 @@ const getRole = async (req,res)=>{
         else
         {
             res.json("failed")
-            console.log("failde")
+            console.log("failed")
         }    
 }
 

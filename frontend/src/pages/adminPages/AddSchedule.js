@@ -29,28 +29,30 @@ const AddSchedule = () => {
   
 
   return (
-    <div>
+    <div className='adminBox '>
       <h2>Add New Practice Session (Admin)</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Sport:
-          <input type="text" name="sport" value={newSchedule.sport} onChange={handleChange} />
-        </label>
-        
-        <label>
-          Start Time:
-          <input type="datetime-local" name="startTime" value={newSchedule.startTime} onChange={handleChange} />
-        </label>
-        <label>
-          End Time:
-          <input type="datetime-local" name="endTime" value={newSchedule.endTime} onChange={handleChange} />
-        </label>
-        <label>
-          Coach:
-          <input type="text" name="coach" value={newSchedule.coach} onChange={handleChange} />
-        </label>
-        
-        <button type="submit">Add Practice Session</button>
+      <form onSubmit={handleSubmit} className='adminForm'>
+      <table>
+  <tr>
+    <td className='label'>Sport:</td>
+    <td><input type="text" name="sport" value={newSchedule.sport} onChange={handleChange} /></td>
+  </tr>
+  <tr>
+    <td className='label'>Start Time:</td>
+    <td><input type="datetime-local" name="startTime" value={newSchedule.startTime} onChange={handleChange} /></td>
+  </tr>
+  <tr>
+    <td className='label'>End Time:</td>
+    <td><input type="datetime-local" name="endTime" value={newSchedule.endTime} onChange={handleChange} /></td>
+  </tr>
+  <tr>
+    <td className='label'>Coach:</td>
+    <td><input type="text" name="coach" value={newSchedule.coach} onChange={handleChange} /></td>
+  </tr>
+</table>
+
+<button type="submit">Add Session</button>
+
       </form>
     </div>
   );
