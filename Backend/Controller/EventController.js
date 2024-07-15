@@ -1,8 +1,6 @@
 const Event = require('../Model/EventSchema');
 
-
-
-const getEvent =  async (req, res) => {
+const getEvent = async (req, res) => {
   try {
     const events = await Event.find({ date: { $gte: new Date() } }).sort({ date: 'asc' });
     res.json(events);
@@ -12,13 +10,16 @@ const getEvent =  async (req, res) => {
   }
 };
 
-// Create a new event
-const postEvent= async (req, res) => {
-  const { title,sportName, date, teamA,teamB } = req.body;
+const postEvent = async (req, res) => {
+  const { title, sportName, date, teamA, teamB } = req.body;
 
   try {
-    const newEvent = new Event({ title,sportName, date, teamA, teamB });
+    const newEvent = new Event({ title, sportName, date, teamA, teamB });
     await newEvent.save();
+
+    const io = req.app.get('io');
+    io.emit('eventUpdated');
+
     res.status(201).json({ message: 'Event added successfully' });
   } catch (error) {
     console.error(error);
@@ -26,7 +27,7 @@ const postEvent= async (req, res) => {
   }
 };
 
-const deletedEvent= async (req, res) => {
+const deletedEvent = async (req, res) => {
   const eventId = req.params.id;
 
   try {
@@ -34,6 +35,10 @@ const deletedEvent= async (req, res) => {
     if (!deletedEvent) {
       return res.status(404).json({ message: 'Event not found' });
     }
+
+    const io = req.app.get('io');
+    io.emit('eventUpdated');
+
     res.json({ message: 'Event deleted successfully' });
   } catch (error) {
     console.error(error);
@@ -41,8 +46,7 @@ const deletedEvent= async (req, res) => {
   }
 };
 
-// UPDATE operation
-const updatedEvent=  async (req, res) => {
+const updatedEvent = async (req, res) => {
   const eventId = req.params.id;
   const { title, sportName, date, teamA, teamB } = req.body;
 
@@ -57,6 +61,9 @@ const updatedEvent=  async (req, res) => {
       return res.status(404).json({ message: 'Event not found' });
     }
 
+    const io = req.app.get('io');
+    io.emit('eventUpdated');
+
     res.json({ message: 'Event updated successfully', updatedEvent });
   } catch (error) {
     console.error(error);
@@ -65,8 +72,8 @@ const updatedEvent=  async (req, res) => {
 };
 
 module.exports = {
-    getEvent,
-    postEvent,
-    deletedEvent,
-    updatedEvent,
+  getEvent,
+  postEvent,
+  deletedEvent,
+  updatedEvent,
 };

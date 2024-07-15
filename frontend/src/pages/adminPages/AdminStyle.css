@@ -1,0 +1,132 @@
+.AdminContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
+  h2, h3 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+ 
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-group input, .form-group select {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .btn {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .AdminContainer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .AdminContainer ul li {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .AdminContainer ul li button {
+    margin-left: 10px;
+  }
+  
+  .AdminContainer ul li button:first-child {
+    background-color: #28a745;
+  }
+  
+  ul li button:first-child:hover {
+    background-color: #218838;
+  }
+  
+  ul li button:last-child {
+    background-color: #dc3545;
+  }
+  
+  ul li button:last-child:hover {
+    background-color: #c82333;
+  }
+  .score-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .score-input {
+    margin-bottom: 10px;
+  }
+  .modal-content {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .modal-header, .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+  }
+  
+  .modal-footer button {
+    margin-left: 10px;
+  }
+  
+  .modal-footer .btn-primary {
+    background-color: #007bff;
+  }
+  
+  .modal-footer .btn-secondary {
+    background-color: #6c757d;
+  }
+  
+  @media (max-width: 600px) {
+    .form-group input, .form-group select {
+      width: 100%;
+    }
+  }
+  

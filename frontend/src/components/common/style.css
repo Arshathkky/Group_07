@@ -6,40 +6,43 @@
     font-family: roboto;
     
 }
-
 .Nav {
-    width: auto;
+    width: 100%;
     height: 80px;
     display: flex;
     background-color: rgba(18, 17, 17, 0.748);
     justify-content: space-between;
     align-items: center;
-    text-align: center;
-     /* Adjust padding for better spacing on smaller screens */
+    padding: 0 20px;
+    box-sizing: border-box;
   }
   
-  .Nav h1 {
-    background-color: rgba(60, 199, 250, 0.914);
-  color: white;
-  font-size: 24px; /* Adjust font size for smaller screens */
-  font-weight: 300;
-  padding: 5px 10px; /* Adjust padding for better spacing on smaller screens */
-  margin: 0; /* Remove margin to stay in the same line */
-  height: 100%; /* Set height to 100% */
-  line-height: 80px;/* Remove margin to stay in the same line */
+  .Nav .logo {
+    background-color: #00bbff;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 5px 10px;
+    margin: 0;
+    line-height: 70px;
+  }
+  
+  .Nav .menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
   }
   
   .Nav .nav-list {
-    padding: 5px;
-    font-size: 18px; /* Adjust font size for smaller screens */
     display: flex;
     align-items: center;
-    font-weight: 300;
+    list-style: none;
+    padding: 0;
   }
   
   .Nav .nav-list li {
-    margin: 0 10px; /* Adjust margin for better spacing on smaller screens */
-    list-style: none; /* Remove list decoration */
+    margin: 0 10px;
   }
   
   .Nav .nav-list li a {
@@ -49,107 +52,132 @@
   }
   
   .Nav .nav-list li a:hover {
-    background-color: rgba(60, 199, 250, 0.914);
+    background-color: #00bbff;
     border-radius: 5px;
   }
   
   .Nav .login button {
-    background-color: rgba(60, 199, 250, 0.914);
+    background-color: #00bbff;
     color: white;
     border: none;
-    margin: 10px; /* Adjust margin for better spacing on smaller screens */
+    margin: 10px;
+  }
+  
+  /* Media Queries */
+  
+  @media only screen and (max-width: 1097px) {
+    .Nav {
+      flex-direction: column;
+      height: auto;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    .Nav .logo {
+      display: none;
+    }
+  
+    .Nav .menu-icon {
+      display: block;
+    }
+  
+    .Nav .nav-list {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      display: none; /* Hide nav-list by default */
+    }
+  
+    .Nav .nav-list.mobile {
+      display: flex; /* Show nav-list when in mobile view and menu icon is clicked */
+    }
+  
+    .Nav .nav-list li {
+      margin: 5px 0;
+    }
+  
+    .Nav .login button {
+      margin: 10px;
+    }
   }
   
 
-
 .Footer {
     background-color: rgba(18, 17, 17, 0.748);
-    width: auto;
-    display: flex;
-    justify-content: space-around; /* Distribute items evenly across the container */
-    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
-    text-align: center;
     color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
     padding: 20px;
   }
   
   .Footer .info,
-  .Footer .social,
-  .Footer .contactus {
-    width: 30%; /* Set the width of each column for larger screens */
-    margin-bottom: 20px; /* Add some spacing between columns */
+  .Footer .social {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px; /* Ensure a minimum width */
+  }
+  
+  .Footer .info h1,
+  .Footer .social h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
   }
   
   .Footer .info h4 {
     font-size: 15px;
   }
   
-  .Footer .li {
+  .Footer .link {
     list-style: none;
-    font-size: 15px;
-    text-align: left;
+    padding: 0;
   }
   
-  .Footer .link a,
-  .Footer .contactus li {
-    text-decoration: none;
+  .Footer .link li {
+    font-size: 15px;
+    margin: 10px 0;
+  }
+  
+  .Footer .link a {
     color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
   }
   
   .Footer .link .icon {
-    margin: 15px;
-  }
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 900px) {
-    .Nav .logo{
-        
-        padding: 0;
-    }
-
-}
-
-@media only screen and (max-width: 768px) {
-
-    .Nav {
-        height: auto; /* Adjust height for mobile view */
-        flex-direction: column;
-        align-items: center;
-      }
-    
-      .Nav h1 {
-        display: none;
-      }
-    
-      .Nav .nav-list {
-        flex-direction: column; /* Change to column for mobile view */
-        justify-content: center;
-        width: 100%;
-        padding-top: 10px; /* Add padding for better spacing on smaller screens */
-      }
-    
-      .Nav .nav-list li {
-        margin: 5px 0; /* Adjust margin for better spacing on smaller screens */
-      }
-    
-      .Nav .login button {
-        margin: 10px; /* Adjust margin for better spacing on smaller screens */
-      }
-
-
-   .Footer .info,
-  .Footer .social,
-  .Footer .contactus {
-    width: 100%; /* Take up the full width on smaller screens */
+    margin-right: 10px;
+    font-size: 20px;
   }
   
-}
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .Footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .Footer .info,
+    .Footer .social {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Footer .info h1,
+    .Footer .social h1 {
+      font-size: 20px;
+    }
+  
+    .Footer .info h4,
+    .Footer .link li {
+      font-size: 14px;
+    }
+  
+    .Footer .link .icon {
+      font-size: 18px;
+    }
+  }
+  

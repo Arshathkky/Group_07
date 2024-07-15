@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const scheduleSchema = new Schema({
     sport: String,
-    
     startTime: String,
     endTime:String,
     coach: String,
