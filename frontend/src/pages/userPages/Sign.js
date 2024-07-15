@@ -25,6 +25,7 @@ const Sign = () => {
           console.log(error);
         }
       };
+<<<<<<< HEAD
 
   return (
     <div className='login-page'>
@@ -40,6 +41,21 @@ const Sign = () => {
     <button onClick={handleLogin}>Login</button>
       </div>
   </div>
+=======
+  return (
+    <div className='adminBox login'>
+      <div className='loginBox'>
+        <h1>Welcome to the Login Page</h1>       
+        <label className='label'>Username: </label>
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <br />
+        <label className='label'>Password: </label>
+        <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <br />
+        <button onClick={handleLogin}>Login</button>
+     </div>
+    </div>
+>>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
   );
 };
 
