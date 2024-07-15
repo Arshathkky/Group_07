@@ -25,19 +25,21 @@ const Sign = () => {
           console.log(error);
         }
       };
+
   return (
-    <div className='adminBox login'>
-      <div className='loginBox'>
-        <h1>Welcome to the Login Page</h1>       
-        <label className='label'>Username: </label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <br />
-        <label className='label'>Password: </label>
-        <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <br />
-        <button onClick={handleLogin}>Login</button>
-     </div>
-    </div>
+    <div className='login-page'>
+      <div className='form'>
+    <h1>Welcome to the Login Page</h1>       
+      
+    <label className='label'>Username: </label>
+    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+    <br />
+    <label className='label'>Password: </label>
+    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+    <br />
+    <button onClick={handleLogin}>Login</button>
+      </div>
+  </div>
   );
 };
 

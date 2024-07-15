@@ -1,0 +1,158 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.news-component {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* News container styles */
+.news-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+ul {
+    padding: 0;
+}
+
+.news-item {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styles */
+.news-image {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.news-image img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.news-image img:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Checkbox styles */
+.checkbox-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    color: #555;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* Paragraph styles */
+p {
+    color: #555;
+    line-height: 1.6;
+    max-height: 60px; /* Restrict max height */
+    overflow: hidden; /* Hide overflow */
+    transition: max-height 0.3s ease;
+}
+
+p.expanded {
+    max-height: none; /* Remove max height when expanded */
+}
+
+/* Button styles */
+.read {
+    background-color:rgba(0, 187, 255, 0.968);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 25%;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read:hover {
+    background-color: #0056b3;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .news-image img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .news-container {
+        padding: 10px;
+    }
+
+    .news-item {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-image img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .news-item {
+        padding: 10px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+}

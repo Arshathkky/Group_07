@@ -1,12 +1,19 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.grid {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Gallery Container */
+/* Gallery Container */
+.gallery-container {
+    padding: 20px;
+  }
+  
+  /* Grid Layout */
+  .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     gap: 1rem;
@@ -14,151 +21,497 @@ body {
     padding-top: 0;
   }
   
-  .grid_item {
+  /* Grid Item */
+  .grid__item {
+    position: relative; /* Added for positioning the delete button */
     height: 16rem;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
   }
   
+  /* Image in Grid Item */
   .grid__item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
+  
+  /* Delete Button */
+  .grid__item button {
+    position: absolute; /* Positioning delete button over the image */
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  /* Load More Button */
+  .load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .load-more-button:hover {
+    background-color: #0056b3;
+  }
+  
   .adminContainer {
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(to right, #ff8c00, #ff2d00)
-    
+    min-height: 100vh;
+    background-color: #f5f5dc;
+    padding: 2rem; /* Added padding for better spacing */
+    position: relative; /* Added for fixed button positioning */
   }
-  .galleryButton {
+  
+  .uploadSection {
+    margin-bottom: 2rem; /* Ensure upload section stays above the grid */
+  }
+  
+  
+  
+  .galleryButtonFixed {
     color: rgb(67, 1, 128);
     font-size: 60px;
     height: 65px;
     position: fixed;
-    right: 0;
-    bottom: 0;
-    margin: 2rem;
+    top: 7rem;
+    right: 2rem;
+    bottom: 2rem;
   }
   
-
-  .adminBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .adminBox h1{
-    color:aliceblue;
-    width: auto;
-  }
-  .label{
-    color: aliceblue;
-    font-size: 20px;
-    margin: 10px;
-    
-  }
-  .adminForm{
-    display: flex;
-    flex-direction: column;
+  .form-group {
+    margin-top: 1rem;
   }
   
-  .loginBox{
-    box-shadow: 10px 10px 5px 0px #232323;
-    border-radius: 10px;
-    padding: 35px;
-    background-color:rgba(0, 187, 255, 0.968);
-    height: 200px;
+  
+    .login-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0; /* Light gray background */
+      }
+      
+      .form {
+        background-color: #ffffff; /* White background */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        border-radius: 10px;
+        padding: 30px;
+        width: 300px;
+      }
+      
+      h1 {
+        color: #333333; /* Dark gray text */
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .login-form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      input {
+        width: 250px;
+        height: 40px;
+        padding: 10px;
+        margin: 15px;
+        border: 1px solid #dddddd; /* Light gray border */
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      
+      button {
+        width: 150px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: #00bbff; /* Light blue background */
+        color: #ffffff; /* White text */
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      button:hover {
+        background-color: #0077cc; /* Darker blue on hover */
+      }
+      
+      .error-message {
+        color: #ff0000; /* Red text for error message */
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      
+    .schedules-container {
+        margin: 20px;
+        padding: 20px;
+        border: 2px solid #00BBFF;
+        border-radius: 10px;
+        background-color: rgba(18, 17, 17, 0.748);
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
     
-  }
-  .login{
-    background-color: #fffffe;
-    height: 100vh;
-
-  }
-  input{
-    border:none;
-    height: 30px;
-    width: 200px;
-    border-radius: 5px;
-    margin-bottom: 5px;
+    .schedules-container h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #00BBFF;
+    }
     
+    .schedules-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    
+    .schedules-table th, .schedules-table td {
+        padding: 15px;
+        border: 1px solid #00BBFF;
+        border-radius: 2px;
+        text-align: left;
+    }
+    
+    .schedules-table th {
+        background-color: #00BBFF;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    .schedules-table tr:nth-child(even) {
+        background-color: rgba(0, 187, 255, 0.2);
+    }
+    
+    .schedules-table tr:hover {
+        background-color: rgba(0, 187, 255, 0.3);
+    }
+    
+    .schedules-table td {
+        color: #fff;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .schedules-container {
+            padding: 10px;
+        }
+    
+        .schedules-table th, .schedules-table td {
+            padding: 10px;
+            font-size: 14px;
+        }
+    
+        .schedules-container h2 {
+            font-size: 20px;
+        }
+    }
+    
+    .news-container{
+      padding: 15px;
+      
+    }
+    li{
+      list-style: none;
+    }
+    .newsImage img{
+      height: 200px;
+      width: 200px;
+    }
+     
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    .resultarea {
+      text-align: center;
+      margin-top: 150px;
+      margin-bottom: 25px;
+      padding: 25px;
+      background-color: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .resultarea:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .resultarea .heading {
+      color: #3cc7fa;
+      margin-bottom: 20px;
+    }
+    
+    .resultarea .heading img {
+      margin-top: 10px;
+    }
+    
+    .resultarea .matchup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .resultarea .matchup h1 {
+      margin: 0 15px;
+      color: #555;
+    }
+    
+    .resultarea .matchup .vs {
+      color: #ef5350;
+      font-weight: bold;
+    }
+    
+    .resultarea .teams {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .resultarea .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .resultarea .team img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .resultarea .team img:hover {
+      transform: scale(1.1);
+    }
+    
+    .resultarea .team h4 {
+      margin-bottom: 5px;
+      font-size: 1.5em;
+      color: #333;
+    }
+    
+    .resultarea .team h4 svg {
+      margin-left: 10px;
+    }
+    
+    .resultarea .team.winner {
+      animation: pulse 1.5s infinite;
+      background-color: #3cc7fa;
+      border-radius: 25px;
+    }
+    
+    .resultarea .team h5 {
+      margin: 5px 0;
+      font-size: 1em;
+      color: #555;
+      
+    }
+    
+    .resultarea .team.winner h5 {
+      animation: pulse 1.5s infinite;
+    }
+    
+    .resultarea .result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .resultarea .players {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    
+    .resultarea .players .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 45%;
+    }
+    
+    .resultarea .players .teamA h5,
+    .resultarea .players .teamB h5 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 10px 0;
+    }
+    
+    .resultarea .players .teamA h5 span,
+    .resultarea .players .teamB h5 span {
+      display: inline-block;
+      min-width: 50px;
+      text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+      .resultarea .matchup,
+      .resultarea .teams,
+      .resultarea .players {
+        flex-direction: column;
+      }
+    
+      .resultarea .players .team {
+        width: 100%;
+      }
+    
+      .resultarea .players .teamA h5,
+      .resultarea .players .teamB h5 {
+        justify-content: space-around;
+      }
+    }
+    
+    
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
   }
-  button{
+  /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  h1, h2, h3 {
+    color: #333;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
     border: none;
-    margin: 10px;
-    height: 35px;
+    padding: 10px 20px;
+    font-size: 16px;
     border-radius: 5px;
-    width: 100px;
-    color:black;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 500;
-
-  }
-  .schedules td, .schedule th{
-    padding: 15px;
-    border: 1px solid aqua;
-    border-radius: 2px;
-    
-  }
-  .news-container{
-    padding: 15px;
-    
-  }
-  li{
-    list-style: none;
-  }
-  .newsImage img{
-    height: 200px;
-    width: 200px;
-  }
-   
-.resultarea{
-    text-align: center;
-    margin: 35px;
-    padding: 25px;
-  }
-  .resultarea .heading{
-    color:rgba(60, 199, 250, 0.914) ;
-    
+    cursor: pointer;
+    margin-top: 10px;
   }
   
+  button:hover {
+    background-color: #0056b3;
+  }
   
-  .resultarea .team h5{
-    color: rgba(60, 199, 250, 0.914) ;;
-    float: left;
-    margin: 10px;
+  /* Scores Table */
+  .scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .scores-table th, .scores-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .scores-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+  }
+  
+  .player-score input {
+    width: 25%;
+    box-sizing: border-box;
+  }
+  
+  /* Select Dropdown */
+  select {
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #333333;
     font-size: 15px;
-    
+    padding: 5px;
+    background-color: #fff;
+    cursor: pointer;
   }
-  .resultarea .team{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;align-items: center;
-    height: auto;
-    width: auto;
-    color: rgba(60, 199, 250, 0.914);  
+  
+  select:focus {
+    outline: none;
+    border-color: #007bff;
   }
-  .resultarea .result{
+  
+  /* Modal */
+  .ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+  }
+  
+  .ReactModal__Content {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-right: -50% !important;
+    transform: translate(-50%, -50%) !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+    width: 80% !important;
+    max-width: 600px !important;
+    background-color: #fff !important;
+  }
+  
+  input[type="text"], input[type="number"] {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Flexbox for alignment */
+  .flex-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    width: 200px;
-    color: rgba(60, 199, 250, 0.914);
-    
-    
+    gap: 20px;
+    margin-bottom: 20px;
   }
-  .resultarea .team img{
-    width: 250px;
-    height: 250px;
-    padding: 35px;
-    padding-top: 0;
   
+  .flex-container > div {
+    flex: 1 1 45%;
+    min-width: 300px;
   }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  /*add score*/
+
+  

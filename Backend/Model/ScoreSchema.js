@@ -1,21 +1,25 @@
 const mongoose = require('mongoose');
 
-const sportSchema = new mongoose.Schema({
-    sportName:String,
-    teamoneName:String,
-    teamoneScore:Number,
-    teamtwoName:String,
-    teamtwoScore:Number,
-    teamoneplayeroneName:String,
-    teamoneplayeroneScore:Number,
-    teamoneplayertwoName:String,
-    teamoneplayertwoScore:Number,
-    teamtwoplayeroneName:String,
-    teamtwoplayeroneScore:Number,
-    teamtwoplayertwoName:String,
-    teamtwoplayertwoScore:Number,
+const playerSchema = new mongoose.Schema({
+  name: String,
+  score: Number
 });
 
-const SportModel = mongoose.model("scores", sportSchema);
+const teamSchema = new mongoose.Schema({
+  name: String,
+  players: [playerSchema],
+  totalScore: Number
+});
 
-module.exports = SportModel;
+const sportSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  type: { type: String, required: true }, // 'team' or 'individual'
+  teams: [teamSchema],
+  numPlayers: Number,
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+module.exports = mongoose.model('Sport', sportSchema);

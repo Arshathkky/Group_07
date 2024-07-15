@@ -5,7 +5,6 @@ import axios from 'axios';
 const AddSchedule = () => {
   const [newSchedule, setNewSchedule] = useState({
     sport: '',
-    
     startTime: '',
     endTime: '',
     coach: '',
@@ -19,7 +18,7 @@ const AddSchedule = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Send a POST request to add a new schedule
-    axios.post('http://localhost:3001/schedules/add', newSchedule)
+    axios.post('http://localhost:5000/api/schedules/add', newSchedule)
       .then(response => {
         console.log('New schedule added:', response.data); 
         // You might want to handle the response or redirect to another page
@@ -29,7 +28,7 @@ const AddSchedule = () => {
   
 
   return (
-    <div className='adminBox '>
+    <div className='AdminContainer '>
       <h2>Add New Practice Session (Admin)</h2>
       <form onSubmit={handleSubmit} className='adminForm'>
       <table>

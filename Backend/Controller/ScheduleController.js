@@ -11,7 +11,7 @@ const Schedule = require('../Model/ScheduleSchema');
     }
 
 const addSchedules = async (req, res) => {
-        const { sport,day,startTime,endTime,coach } = req.body;
+        const { sport,startTime,endTime,coach } = req.body;
         const newSchedule = new Schedule({ sport, startTime, endTime, coach });
 
         try {

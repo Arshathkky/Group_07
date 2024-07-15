@@ -1,13 +1,10 @@
 const express = require('express');
+const router = express.Router();
 const sportController = require('../Controller/ScoreController');
 
-const router = express.Router();
-
-router.get("/getScore", sportController.getScore);
-router.post("/addScore", sportController.addScore);
-router.put("/updateScore/:id", sportController.updateScore);
-router.delete("/deleteScore/:id", sportController.deleteScore);
-router.get("/getScore/:id", sportController.getScoreById);
-router.get("/getLatest", sportController.getLatestScore);
+router.post('/', (req, res) => sportController.addSport(req, res, req.app.get('io')));
+router.put('/:id', (req, res) => sportController.updateScore(req, res, req.app.get('io')));
+router.delete('/:id', (req, res) => sportController.deleteSport(req, res, req.app.get('io')));
+router.get('/', sportController.getAllSports);
 
 module.exports = router;
