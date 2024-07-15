@@ -1,5 +1,4 @@
 body {
-<<<<<<< HEAD
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -15,16 +14,6 @@ body {
   
   /* Grid Layout */
   .grid {
-=======
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.grid {
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     gap: 1rem;
@@ -32,29 +21,21 @@ body {
     padding-top: 0;
   }
   
-<<<<<<< HEAD
   /* Grid Item */
   .grid__item {
     position: relative; /* Added for positioning the delete button */
-=======
-  .grid_item {
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
     height: 16rem;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);
   }
   
-<<<<<<< HEAD
   /* Image in Grid Item */
-=======
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
   .grid__item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-<<<<<<< HEAD
   
   /* Delete Button */
   .grid__item button {
@@ -534,141 +515,3 @@ body {
   /*add score*/
 
   
-=======
-
-  .adminContainer {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to right, #ff8c00, #ff2d00)
-    
-  }
-  .galleryButton {
-    color: rgb(67, 1, 128);
-    font-size: 60px;
-    height: 65px;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    margin: 2rem;
-  }
-  
-
-  .adminBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .adminBox h1{
-    color:aliceblue;
-    width: auto;
-  }
-  .label{
-    color: aliceblue;
-    font-size: 20px;
-    margin: 10px;
-    
-  }
-  .adminForm{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .loginBox{
-    box-shadow: 10px 10px 5px 0px #232323;
-    border-radius: 10px;
-    padding: 35px;
-    background-color:rgba(0, 187, 255, 0.968);
-    height: 200px;
-    
-  }
-  .login{
-    background-color: #fffffe;
-    height: 100vh;
-
-  }
-  input{
-    border:none;
-    height: 30px;
-    width: 200px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    
-  }
-  button{
-    border: none;
-    margin: 10px;
-    height: 35px;
-    border-radius: 5px;
-    width: 100px;
-    color:black;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 500;
-
-  }
-  .schedules td, .schedule th{
-    padding: 15px;
-    border: 1px solid aqua;
-    border-radius: 2px;
-    
-  }
-  .news-container{
-    padding: 15px;
-    
-  }
-  li{
-    list-style: none;
-  }
-  .newsImage img{
-    height: 200px;
-    width: 200px;
-  }
-   
-.resultarea{
-    text-align: center;
-    margin: 35px;
-    padding: 25px;
-  }
-  .resultarea .heading{
-    color:rgba(60, 199, 250, 0.914) ;
-    
-  }
-  
-  
-  .resultarea .team h5{
-    color: rgba(60, 199, 250, 0.914) ;;
-    float: left;
-    margin: 10px;
-    font-size: 15px;
-    
-  }
-  .resultarea .team{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;align-items: center;
-    height: auto;
-    width: auto;
-    color: rgba(60, 199, 250, 0.914);  
-  }
-  .resultarea .result{
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    color: rgba(60, 199, 250, 0.914);
-    
-    
-  }
-  .resultarea .team img{
-    width: 250px;
-    height: 250px;
-    padding: 35px;
-    padding-top: 0;
-  
-  }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be

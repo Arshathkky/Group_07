@@ -28,11 +28,7 @@ const AddSchedule = () => {
   
 
   return (
-<<<<<<< HEAD
     <div className='AdminContainer '>
-=======
-    <div className='adminBox '>
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
       <h2>Add New Practice Session (Admin)</h2>
       <form onSubmit={handleSubmit} className='adminForm'>
       <table>

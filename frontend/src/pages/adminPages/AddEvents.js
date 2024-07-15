@@ -28,11 +28,7 @@ const AddEvents = () => {
 
   const fetchEvents = async () => {
     try {
-<<<<<<< HEAD
       const response = await axios.get('http://localhost:5000/api/event/getEvent');
-=======
-      const response = await axios.get('http://localhost:5000/api/event/getEvent'); // Update with your backend server URL
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
       setEvents(response.data);
     } catch (error) {
       console.error('Error fetching events:', error);
@@ -41,11 +37,7 @@ const AddEvents = () => {
 
   const handleAddEvent = async () => {
     try {
-<<<<<<< HEAD
       await axios.post('http://localhost:5000/api/event/addEvent', { title, sportName, date, teamA, teamB });
-=======
-      await axios.post('http://localhost:5000/api/event/addEvent', { title,sportName, date, teamA, teamB }); // Update with your backend server URL
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
       alert('Event added successfully');
       clearForm();
       fetchEvents();
@@ -57,11 +49,7 @@ const AddEvents = () => {
 
   const handleUpdateEvent = async () => {
     try {
-<<<<<<< HEAD
       await axios.put(`http://localhost:5000/api/event/updateEvent/${currentEventId}`, { title, sportName, date, teamA, teamB });
-=======
-      await axios.put(`http://localhost:5000/api/event/updateEvent/${eventId}`, { title, date, teamA, teamB }); // Update with your backend server URL
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
       alert('Event updated successfully');
       
       clearForm();
@@ -74,11 +62,7 @@ const AddEvents = () => {
 
   const handleDeleteEvent = async (eventId) => {
     try {
-<<<<<<< HEAD
       await axios.delete(`http://localhost:5000/api/event/deleteEvent/${eventId}`);
-=======
-      await axios.delete(`http://localhost:5000/api/event/deleteEvent/${eventId}`); // Update with your backend server URL
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
       alert('Event deleted successfully');
       fetchEvents();
     } catch (error) {
@@ -96,7 +80,6 @@ const AddEvents = () => {
   };
 
   return (
-<<<<<<< HEAD
     <div className='AdminContainer'>
       <h1>Add Event</h1>
       <form className='adminForm'>
@@ -126,33 +109,6 @@ const AddEvents = () => {
         <button type="button" onClick={update ? handleUpdateEvent : handleAddEvent}>
           {update ? 'Update Event' : 'Add Event'}
         </button>
-=======
-    <div className='adminBox'>
-      <h1>Add Event</h1>
-      <form className='adminForm'>
-      <table>
-  <tr>
-    <td className='label'>Title:</td>
-    <td><input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required /></td>
-  </tr>
-  <tr>
-    <td className='label'>Sport Name:</td>
-    <td><input type="text" value={sportName} onChange={(e) => setSport(e.target.value)} required /></td>
-  </tr>
-  <tr>
-    <td className='label'>Date:</td>
-    <td><input type="date" value={date} onChange={(e) => setDate(e.target.value)} required /></td>
-  </tr>
-  <tr>
-    <td className='label'>Team A</td>
-    <td><input type="text" value={teamA} onChange={(e) => setTeamA(e.target.value)} required /></td>
-  </tr>
-  <tr>
-    <td className='label'>Team B:</td>
-    <td><input type="text" value={teamB} onChange={(e) => setTeamB(e.target.value)} required /></td>
-  </tr>
-</table>
->>>>>>> 7049bfaadff65d98f7c558e5e690a8ff67f834be
 
         <h2>Events List</h2>
         <ul>
