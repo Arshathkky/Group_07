@@ -20,7 +20,8 @@ npm install react-slideshow-image
 npm install react-router-dom 
 npm install react react-icons
 
-login as admin
+login as admin![Screenshot (279)](https://github.com/user-attachments/assets/b896ece0-a4d4-4a50-9610-55811403114f)
+
 username admin
 password 1234
 
